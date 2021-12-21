@@ -1,0 +1,18 @@
+﻿@model AddSubjectFormModel
+
+@{ ViewBag.Title = "Предмет"; }
+<h1><span class="badge badge-secondary col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добавяне на предмет</span></h1>
+
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="SubjectName"></label>
+                <input asp-for="SubjectName" class="form-control" placeholder="">
+                <span asp-validation-for="SubjectName" class="small text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary  col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добави</button>
+        </form>
+    </div>
+</div>

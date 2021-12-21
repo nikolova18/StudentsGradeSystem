@@ -1,0 +1,45 @@
+﻿@model AddStudentFormModel
+
+@{ ViewBag.Title = "Добавяне на студент"; }
+<h1><span class="badge badge-secondary col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добавяне на студент</span></h1>
+
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="FacultyNumber"></label>
+                <input asp-for="FacultyNumber" class="form-control" placeholder="">
+                <span asp-validation-for="FacultyNumber" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName">Име</label>
+                <input asp-for="FirstName" class="form-control" placeholder="">
+                <span asp-validation-for="FirstName" class="small text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName">Фамилия</label>
+                <input asp-for="LastName" class="form-control" placeholder="">
+                <span asp-validation-for="LastName" class="small text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="FacultyName">Специалност</label>
+                <input asp-for="FacultyName" class="form-control" placeholder="">
+                <span asp-validation-for="FacultyName" class="small text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Year"></label>
+                <select asp-for="Year" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary  col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добави</button>
+        </form>
+    </div>
+</div>
