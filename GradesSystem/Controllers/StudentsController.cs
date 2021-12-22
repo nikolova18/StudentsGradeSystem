@@ -34,6 +34,7 @@
             {
                 StudentSorting.FacultyName => studentsQuery.OrderBy(p => p.FacultyName),
                 StudentSorting.Year => studentsQuery.OrderBy(p => p.Year),
+                StudentSorting.YearD => studentsQuery.OrderByDescending(p => p.Year),
                 StudentSorting.FacultyNumber => studentsQuery.OrderBy(p => p.FacultyNumber),
                 StudentSorting.DateCreated or _ => studentsQuery.OrderByDescending(p => p.Id)
             };

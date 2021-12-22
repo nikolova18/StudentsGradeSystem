@@ -63,7 +63,7 @@
             };
             this.data.Subjects.Add(subjectdata);
             this.data.SaveChanges();
-            return View();
+            return RedirectToAction(nameof(All));
         }
 
 

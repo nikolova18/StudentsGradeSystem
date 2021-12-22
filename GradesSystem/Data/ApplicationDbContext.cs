@@ -25,8 +25,6 @@
                 .HasKey(ssg => new { ssg.StudentId, ssg.SubjectId });
                 
 
-
-
             base.OnModelCreating(builder);
         }
     }

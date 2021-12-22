@@ -13,12 +13,12 @@
 
         [Key]
         public int SubjectId { get; set; }
-        public string Subject { get; set; }
+        public string SubjectName { get; set; }
 
         [Range(2,6)]
         public int Grade { get; set; }
-        public IEnumerable<Subject> Subjects { get; set; } = new List<Subject>();
-        public IEnumerable<Student> Students { get; set; } = new List<Student>();
+        //public IEnumerable<Subject> Subjects { get; set; } = new List<Subject>();
+        //public IEnumerable<Student> Students { get; set; } = new List<Student>();
 
     }
 }

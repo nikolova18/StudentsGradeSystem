@@ -10,22 +10,16 @@
             <label asp-for="SubjectName"></label>
             <select asp-for="SubjectName" class="form-control">
                 <option value="">Всички</option>
-                @foreach (var name in Model.Subjects)
+                @foreach (var name in Model.SubjectsName)
                 {
-                    <option>@name.SubjectName</option>
-                }
+    <option>@name.Name</option>}
             </select>
         </div>
 
         <div class="form-group">
-            <label asp-for="StudentName"></label>
-            <select asp-for="StudentName" class="form-control">
-                <option value="">Всички</option>
-                @foreach (var name in Model.Students)
-                {
-                     <option>@name.FacultyNumber / @name.Name </option>
-                }
-            </select>
+            <label asp-for="FacultyNumber"></label>
+            <input asp-for="FacultyNumber" class="form-control" placeholder="">
+            <span asp-validation-for="FacultyNumber" class="small text-danger"></span>
         </div>
 
         <div class="form-group">

@@ -1,3 +1,67 @@
 ﻿@model AllSubjectGradesQueryModel
 
 @{ ViewData["Title"] = "Всички оценки"; }
+
+<form method="get">
+    <div class="row mb-3">
+        <div class="form-group col-md-4">
+            <div class="form-group">
+                <label asp-for="SubjectName">Предмет</label>
+                <select asp-for="SubjectName" class="form-control">
+                    <option value="">Всички</option>
+                    @foreach (var name in Model.SubjectNames)
+                    {
+                        <option value="@name">@name</option>}
+                </select>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="SearchTerm">Търси</label>
+            <input asp-for="SearchTerm" class="form-control" placeholder="Търси по име или специалност">
+        </div>
+
+        <div class="form-group col-md-4">
+            <div class="form-group">
+                <label asp-for="Sorting">Сортирай</label>
+                <select asp-for="Sorting" class="form-control">
+                    <option value="0" selected>Име на предмет</option>
+                    <option value="1">Имена на студент</option>
+                    <option value="2">Оценки (2-6)</option>
+                    <option value="3">Оценки (6-2)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form method="get">
+    <div class="row mb-3">
+        <div class="form-group col-md-4">
+            <div class="form-group">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Име на студент</th>
+            <th scope="col">Име на предмет</th>
+            <th scope="col">Оценка</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in Model.Students)
+        {
+        <tr>
+            <td>@subject.StudentName</td>
+            <td> @subject.SubjectName </td>
+            <td>@subject.Grade</td>
+
+        </tr>}
+    </tbody>
+</table>
