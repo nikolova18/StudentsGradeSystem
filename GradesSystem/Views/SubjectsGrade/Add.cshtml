@@ -1,0 +1,44 @@
+﻿@model AddSubjectGradeFormModel
+
+@{ ViewData["Title"] = "Добави оценка"; }
+<h1><span class="badge badge-secondary col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добавяне на оценка</span></h1>
+
+<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+    <form method="post">
+
+        <div class="form-group">
+            <label asp-for="SubjectName"></label>
+            <select asp-for="SubjectName" class="form-control">
+                <option value="">Всички</option>
+                @foreach (var name in Model.Subjects)
+                {
+                    <option>@name.SubjectName</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StudentName"></label>
+            <select asp-for="StudentName" class="form-control">
+                <option value="">Всички</option>
+                @foreach (var name in Model.Students)
+                {
+                     <option>@name.FacultyNumber / @name.Name </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Grade"></label>
+            <select asp-for="Grade" class="form-control">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary  col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">Добави</button>
+    </form>
+</div>
